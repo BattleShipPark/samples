@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.battleshippark.cancelanimation.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ico_loading"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Play"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+    <Button
+        android:id="@+id/pauseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Pause"
+        app:layout_constraintLeft_toRightOf="@id/playButton"
+        app:layout_constraintTop_toTopOf="@id/playButton" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Cancel"
+        app:layout_constraintLeft_toRightOf="@id/pauseButton"
+        app:layout_constraintTop_toTopOf="@id/playButton" />
+
+
+    <Button
+        android:id="@+id/cancelClearButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="Cancel and Clear"
+        app:layout_constraintLeft_toRightOf="@id/cancelButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/playButton" />
+
+    <Button
+        android:id="@+id/cancelPlayButton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Cancel and Play"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playButton" />
+
+    <Button
+        android:id="@+id/clearPlayButton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Clear and Play"
+        app:layout_constraintLeft_toRightOf="@id/cancelPlayButton"
+        app:layout_constraintTop_toTopOf="@id/cancelPlayButton" />
+
+</android.support.constraint.ConstraintLayout>
