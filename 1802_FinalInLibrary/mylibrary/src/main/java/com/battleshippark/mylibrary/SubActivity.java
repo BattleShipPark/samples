@@ -17,6 +17,6 @@ public class SubActivity extends Activity {
         setContentView(R.layout.activity_sub);
         ButterKnife.bind(this);
 
-        textView.setText(textView.getText() + " - SubActivity");
+        textView.setText(textView.getText() + "-" + getResources().getString(R.string.app_name2));
     }
 }
