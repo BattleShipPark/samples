@@ -41,4 +41,22 @@
         app:layout_constraintStart_toEndOf="@id/translucent_code"
         app:layout_constraintTop_toTopOf="@id/translucent_code" />
 
+    <Button
+        android:id="@+id/transparent1_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Transparent1 (code)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/translucent_code" />
+
+    <Button
+        android:id="@+id/transparent2_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Transparent2 (code)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/transparent1_code" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
