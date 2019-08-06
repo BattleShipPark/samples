@@ -59,4 +59,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/transparent1_code" />
 
+    <Button
+        android:id="@+id/transparent3_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Transparent3 (code)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/transparent2_code" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
