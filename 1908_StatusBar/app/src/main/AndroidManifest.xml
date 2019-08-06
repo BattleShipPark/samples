@@ -20,6 +20,10 @@
         <activity
             android:name=".ColorActivity"
             android:theme="@style/AppTheme.Color" />
+
+        <activity
+            android:name=".TranslucentActivity"
+            android:theme="@style/AppTheme.Translucent" />
     </application>
 
 </manifest>

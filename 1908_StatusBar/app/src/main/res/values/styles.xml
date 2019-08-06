@@ -12,4 +12,8 @@
         <item name="android:statusBarColor">#ff0000</item>
     </style>
 
+    <style name="AppTheme.Translucent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
 </resources>
