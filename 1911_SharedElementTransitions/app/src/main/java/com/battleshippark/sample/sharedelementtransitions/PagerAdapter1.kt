@@ -5,7 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.list_item_photo_list.view.*
+import kotlinx.android.synthetic.main.list_item_photo.view.*
+import kotlinx.android.synthetic.main.list_item_photo_list.view.imageView
 
 class PagerAdapter1 : PagerAdapter() {
     private val items = PhotoItems.generate()
@@ -13,9 +14,17 @@ class PagerAdapter1 : PagerAdapter() {
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view = LayoutInflater.from(container.context)
             .inflate(R.layout.list_item_photo, container, false)
-        Glide.with(view).load(items[position].imageUrl).into(view.imageView)
 
         container.addView(view)
+
+        Glide.with(view).load(items[position].imageUrl).into(view.imageView)
+
+        view.textView.text = String.format(
+            "URL: %s\nWidth: %d, Height: %d",
+            items[position].webPageUrl,
+            items[position].width,
+            items[position].height
+        )
 
         return view
     }
