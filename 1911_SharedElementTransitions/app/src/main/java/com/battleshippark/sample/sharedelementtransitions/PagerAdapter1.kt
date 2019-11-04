@@ -19,6 +19,7 @@ class PagerAdapter1 : PagerAdapter() {
 
         Glide.with(view).load(items[position].imageUrl).into(view.imageView)
 
+        view.imageView.transitionName = "TN${position}"
         view.textView.text = String.format(
             "URL: %s\nWidth: %d, Height: %d",
             items[position].webPageUrl,

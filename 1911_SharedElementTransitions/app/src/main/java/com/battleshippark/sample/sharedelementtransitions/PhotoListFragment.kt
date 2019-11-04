@@ -22,12 +22,16 @@ class PhotoListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        listView.adapter = PhotoListAdapter(
-            View.OnClickListener {
-                fragmentManager?.beginTransaction()
-                    ?.replace(R.id.fragment_container, ViewPagerFragment(), "VP")
-                    ?.addToBackStack("VP")
-                    ?.commit()
-            })
+        listView.adapter = PhotoListAdapter { itemView, position ->
+            itemView.transitionName = "TN$position"
+
+            fragmentManager ?: return@PhotoListAdapter
+
+            fragmentManager!!.beginTransaction()
+                .addSharedElement(itemView, itemView.transitionName)
+                .replace(R.id.fragment_container, ViewPagerFragment(), "VP")
+                .addToBackStack("VP")
+                .commit()
+        }
     }
 }

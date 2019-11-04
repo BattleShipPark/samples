@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.list_item_photo_list.view.*
 
-class PhotoListAdapter(private val onClickItem: View.OnClickListener) :
+class PhotoListAdapter(private val onClickItem: (View, Int) -> Unit) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val items = PhotoItems.generate()
 
@@ -29,7 +29,7 @@ class PhotoListAdapter(private val onClickItem: View.OnClickListener) :
         Glide.with(holder.itemView).load(items[position].imageUrl).into(holder.itemView.imageView)
 
         holder.itemView.imageView.setOnClickListener {
-            onClickItem.onClick(it)
+            onClickItem(it, position)
         }
     }
 }
