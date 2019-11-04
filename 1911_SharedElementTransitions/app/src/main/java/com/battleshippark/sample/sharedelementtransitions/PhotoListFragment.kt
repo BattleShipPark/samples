@@ -11,7 +11,6 @@ import kotlinx.android.synthetic.main.fragment_photo_list.*
 /**
  */
 class PhotoListFragment : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,16 +21,31 @@ class PhotoListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val screen = arguments?.getInt("screen") ?: 1
+
         listView.adapter = PhotoListAdapter { itemView, position ->
             itemView.transitionName = "TN$position"
 
             fragmentManager ?: return@PhotoListAdapter
 
+            val fragment = if (screen == 1) {
+                ViewPagerFragment()
+            } else {
+                ViewPagerFragment2()
+            }
             fragmentManager!!.beginTransaction()
                 .addSharedElement(itemView, itemView.transitionName)
-                .replace(R.id.fragment_container, ViewPagerFragment(), "VP")
+                .replace(R.id.fragment_container, fragment, "VP")
                 .addToBackStack("VP")
                 .commit()
+        }
+    }
+
+    companion object {
+        fun newInstance(screen: Int): PhotoListFragment {
+            return PhotoListFragment().apply {
+                arguments = Bundle().apply { putInt("screen", screen) }
+            }
         }
     }
 }

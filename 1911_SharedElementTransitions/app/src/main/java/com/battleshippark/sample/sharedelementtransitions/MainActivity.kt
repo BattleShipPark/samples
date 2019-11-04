@@ -13,7 +13,17 @@ class MainActivity : AppCompatActivity() {
 
         button1.setOnClickListener {
             startActivity(
-                Intent(this, TransitionActivity::class.java)
+                Intent(this, TransitionActivity::class.java).apply {
+                    putExtra("screen", 1)
+                }
+            )
+        }
+
+        button2.setOnClickListener {
+            startActivity(
+                Intent(this, TransitionActivity::class.java).apply {
+                    putExtra("screen", 2)
+                }
             )
         }
     }

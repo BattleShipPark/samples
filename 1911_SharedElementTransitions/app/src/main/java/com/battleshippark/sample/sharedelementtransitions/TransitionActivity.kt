@@ -9,7 +9,9 @@ class TransitionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_transition)
 
+        val screen = intent.getIntExtra("screen", 1)
+
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, PhotoListFragment()).commit()
+            .replace(R.id.fragment_container, PhotoListFragment.newInstance(screen)).commit()
     }
 }
