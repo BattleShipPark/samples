@@ -27,6 +27,7 @@ class PhotoListAdapter(private val onClickItem: (View, Int) -> Unit) :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         Glide.with(holder.itemView).load(items[position].imageUrl)
+            .dontTransform()
             .into(holder.itemView.imageView)
 
         holder.itemView.imageView.setOnClickListener {

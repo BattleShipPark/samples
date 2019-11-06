@@ -17,7 +17,7 @@ class PagerAdapter1 : PagerAdapter() {
 
         container.addView(view)
 
-        Glide.with(view).load(items[position].imageUrl).into(view.imageView)
+        Glide.with(view).load(items[position].imageUrl).dontTransform().into(view.imageView)
 
         view.imageView.transitionName = "TN${position}"
         view.textView.text = String.format(

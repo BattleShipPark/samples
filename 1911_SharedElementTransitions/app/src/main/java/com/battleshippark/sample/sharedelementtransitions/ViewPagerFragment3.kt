@@ -11,8 +11,12 @@ import kotlinx.android.synthetic.main.fragment_view_pager.*
 /**
  */
 class ViewPagerFragment3 : Fragment() {
+    private var position = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        position = arguments?.getInt("position") ?: 0
 
         postponeEnterTransition()
         sharedElementEnterTransition =
@@ -30,5 +34,14 @@ class ViewPagerFragment3 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewPager.adapter = PagerAdapter3(childFragmentManager)
+        viewPager.currentItem = position
+    }
+
+    companion object {
+        fun newInstance(position: Int): ViewPagerFragment3 {
+            return ViewPagerFragment3().apply {
+                arguments = Bundle().apply { putInt("position", position) }
+            }
+        }
     }
 }
