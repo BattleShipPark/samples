@@ -24,19 +24,17 @@ class PhotoListFragment : Fragment() {
         val screen = arguments?.getInt("screen") ?: 1
 
         listView.adapter = PhotoListAdapter { itemView, position ->
-            itemView.transitionName = "TN$position"
-
             fragmentManager ?: return@PhotoListAdapter
 
-            val fragment = if (screen == 1) {
-                ViewPagerFragment()
-            } else {
-                ViewPagerFragment2()
+            val fragment = when (screen) {
+                1 -> ViewPagerFragment()
+                2 -> ViewPagerFragment2()
+                else -> ViewPagerFragment3()
             }
             fragmentManager!!.beginTransaction()
                 .addSharedElement(itemView, itemView.transitionName)
-                .replace(R.id.fragment_container, fragment, "VP")
-                .addToBackStack("VP")
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
                 .commit()
         }
     }

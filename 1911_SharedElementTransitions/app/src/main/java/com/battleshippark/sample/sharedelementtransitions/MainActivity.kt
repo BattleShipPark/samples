@@ -26,5 +26,13 @@ class MainActivity : AppCompatActivity() {
                 }
             )
         }
+
+        button3.setOnClickListener {
+            startActivity(
+                Intent(this, TransitionActivity::class.java).apply {
+                    putExtra("screen", 3)
+                }
+            )
+        }
     }
 }

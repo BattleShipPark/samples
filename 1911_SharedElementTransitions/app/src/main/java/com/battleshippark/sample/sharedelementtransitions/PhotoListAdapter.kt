@@ -26,10 +26,12 @@ class PhotoListAdapter(private val onClickItem: (View, Int) -> Unit) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        Glide.with(holder.itemView).load(items[position].imageUrl).into(holder.itemView.imageView)
+        Glide.with(holder.itemView).load(items[position].imageUrl)
+            .into(holder.itemView.imageView)
 
         holder.itemView.imageView.setOnClickListener {
             onClickItem(it, position)
         }
+        holder.itemView.imageView.transitionName = "TN$position"
     }
 }

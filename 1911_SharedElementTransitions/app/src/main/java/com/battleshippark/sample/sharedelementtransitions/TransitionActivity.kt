@@ -12,6 +12,6 @@ class TransitionActivity : AppCompatActivity() {
         val screen = intent.getIntExtra("screen", 1)
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, PhotoListFragment.newInstance(screen)).commit()
+            .add(R.id.fragment_container, PhotoListFragment.newInstance(screen)).commit()
     }
 }
