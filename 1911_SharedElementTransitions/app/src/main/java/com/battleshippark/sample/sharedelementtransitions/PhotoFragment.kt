@@ -25,7 +25,6 @@ class PhotoFragment : Fragment() {
             position = it.getInt(ARG_POSITION)
         }
 
-        postponeEnterTransition()
         sharedElementEnterTransition =
             TransitionInflater.from(context).inflateTransition(android.R.transition.move)
     }
