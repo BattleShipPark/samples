@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Replacing fragment in tab</string>
+    <string name="fragment_transaction_activity_name">FragmentTransaction</string>
 </resources>
