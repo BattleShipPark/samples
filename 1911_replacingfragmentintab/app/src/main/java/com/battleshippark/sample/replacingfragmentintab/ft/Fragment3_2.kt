@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.battleshippark.sample.replacingfragmentintab.LogLifecycleObserver
 import com.battleshippark.sample.replacingfragmentintab.R
@@ -25,5 +26,12 @@ class Fragment3_2 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewLifecycleOwner.lifecycle.addObserver(LogLifecycleObserver(this))
+
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    fragmentManager?.popBackStack()
+                }
+            })
     }
 }
