@@ -6,4 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".ft.FragmentTransactionActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="48dp" />
+
+    <Button
+        android:id="@+id/tab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tab1"
+        app:layout_constraintBottom_toBottomOf="@id/guide_line"
+        app:layout_constraintEnd_toStartOf="@id/tab2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tab2"
+        app:layout_constraintBottom_toBottomOf="@id/guide_line"
+        app:layout_constraintEnd_toStartOf="@id/tab3"
+        app:layout_constraintStart_toEndOf="@id/tab1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tab3"
+        app:layout_constraintBottom_toBottomOf="@id/guide_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tab2"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
