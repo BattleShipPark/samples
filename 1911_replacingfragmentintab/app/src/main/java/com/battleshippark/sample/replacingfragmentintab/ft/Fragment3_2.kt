@@ -12,25 +12,18 @@ import com.battleshippark.sample.replacingfragmentintab.R
 /**
  * A simple [Fragment] subclass.
  */
-class Fragment3 : Fragment(), Fragment3_1.Container {
+class Fragment3_2 : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment3, container, false)
+        return inflater.inflate(R.layout.fragment_fragment3_2, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewLifecycleOwner.lifecycle.addObserver(LogLifecycleObserver(this))
-    }
-
-    override fun openPage() {
-        childFragmentManager.beginTransaction()
-            .addToBackStack(null)
-            .replace(R.id.fragment_container, Fragment3_2())
-            .commit()
     }
 }

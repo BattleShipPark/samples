@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:text="Open Page" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:gravity="center"
+                android:text="TEXT-A" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:gravity="center"
+                android:text="TEXT-B" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:gravity="center"
+                android:text="TEXT-C" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:gravity="center"
+                android:text="TEXT-D" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:gravity="center"
+                android:text="TEXT-E" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:gravity="center"
+                android:text="TEXT-F" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:gravity="center"
+                android:text="TEXT-G" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</FrameLayout>
