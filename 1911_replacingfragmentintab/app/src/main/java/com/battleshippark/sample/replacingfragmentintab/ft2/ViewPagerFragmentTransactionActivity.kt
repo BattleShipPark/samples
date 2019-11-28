@@ -6,31 +6,38 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.battleshippark.sample.replacingfragmentintab.R
-import com.battleshippark.sample.replacingfragmentintab.ft1.Fragment1
-import com.battleshippark.sample.replacingfragmentintab.ft1.Fragment2
-import com.battleshippark.sample.replacingfragmentintab.ft1.Fragment3
+import com.battleshippark.sample.replacingfragmentintab.ft1.*
 import kotlinx.android.synthetic.main.activity_fragment_transaction.tab1
 import kotlinx.android.synthetic.main.activity_fragment_transaction.tab2
 import kotlinx.android.synthetic.main.activity_fragment_transaction.tab3
 import kotlinx.android.synthetic.main.activity_view_pager_fragment_transaction.*
 
-class ViewPagerFragmentTransactionActivity : AppCompatActivity() {
+class ViewPagerFragmentTransactionActivity : AppCompatActivity(), Container {
+    override val sharedModel: SharedModel = SharedModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_pager_fragment_transaction)
 
         view_pager.adapter = Adapter(supportFragmentManager)
+        view_pager.offscreenPageLimit = 2
+
         tab1.setOnClickListener {
-            view_pager.currentItem = 0
+            selectPage(0)
         }
 
         tab2.setOnClickListener {
-            view_pager.currentItem = 1
+            selectPage(1)
         }
 
         tab3.setOnClickListener {
-            view_pager.currentItem = 2
+            selectPage(2)
         }
+    }
+
+    private fun selectPage(position: Int) {
+        view_pager.currentItem = position
+        sharedModel.visiblePage.value = position
     }
 
     private class Adapter(fm: FragmentManager) :
