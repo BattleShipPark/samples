@@ -30,6 +30,7 @@ class Fragment3 : Fragment(), Fragment3_1.Container {
     override fun openPage() {
         childFragmentManager.beginTransaction()
             .addToBackStack(null)
+            .setCustomAnimations(android.R.anim.slide_in_left, 0, 0, android.R.anim.slide_out_right)
             .replace(R.id.fragment_container, Fragment3_2())
             .commit()
     }
