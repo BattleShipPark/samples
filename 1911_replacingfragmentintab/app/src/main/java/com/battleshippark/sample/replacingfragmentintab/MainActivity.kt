@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.battleshippark.sample.replacingfragmentintab.ft.FragmentTransactionActivity
+import com.battleshippark.sample.replacingfragmentintab.ft1.FragmentTransactionActivity
 
 class MainActivity : AppCompatActivity() {
 

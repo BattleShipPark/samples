@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ft.FragmentTransactionActivity"
+            android:name=".ft1.FragmentTransactionActivity"
             android:label="@string/fragment_transaction_activity_name" />
         <activity android:name=".MainActivity">
             <intent-filter>

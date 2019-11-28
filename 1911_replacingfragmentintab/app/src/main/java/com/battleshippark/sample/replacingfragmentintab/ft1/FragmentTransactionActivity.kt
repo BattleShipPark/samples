@@ -1,4 +1,4 @@
-package com.battleshippark.sample.replacingfragmentintab.ft
+package com.battleshippark.sample.replacingfragmentintab.ft1
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
