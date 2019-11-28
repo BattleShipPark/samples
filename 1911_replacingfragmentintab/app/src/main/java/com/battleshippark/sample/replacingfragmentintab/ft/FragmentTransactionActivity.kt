@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import com.battleshippark.sample.replacingfragmentintab.R
 import kotlinx.android.synthetic.main.activity_fragment_transaction.*
 
-class FragmentTransactionActivity : AppCompatActivity() {
+class FragmentTransactionActivity : AppCompatActivity(), Container {
     private var fragment1: Fragment? = null
     private var fragment2: Fragment? = null
     private var fragment3: Fragment? = null
+
+    override val sharedModel: SharedModel = SharedModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,8 @@ class FragmentTransactionActivity : AppCompatActivity() {
                 }
                 commit()
             }
+
+            sharedModel.visiblePage.value = 0
         }
 
         tab2.setOnClickListener {
@@ -49,6 +53,8 @@ class FragmentTransactionActivity : AppCompatActivity() {
                 }
                 commit()
             }
+
+            sharedModel.visiblePage.value = 1
         }
 
         tab3.setOnClickListener {
@@ -67,6 +73,8 @@ class FragmentTransactionActivity : AppCompatActivity() {
                 }
                 commit()
             }
+
+            sharedModel.visiblePage.value = 2
         }
     }
 }
