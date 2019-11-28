@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.battleshippark.sample.replacingfragmentintab.ft1.FragmentTransactionActivity
+import com.battleshippark.sample.replacingfragmentintab.ft2.ViewPagerFragmentTransactionActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,5 +19,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickFragmentTransaction2(view: View) {
+        startActivity(Intent(this, ViewPagerFragmentTransactionActivity::class.java))
     }
 }

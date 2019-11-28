@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ft2.ViewPagerFragmentTransactionActivity"
+            android:label="@string/view_pager_fragment_transaction_activity_name" />
+        <activity
             android:name=".ft1.FragmentTransactionActivity"
             android:label="@string/fragment_transaction_activity_name" />
         <activity android:name=".MainActivity">
