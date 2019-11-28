@@ -13,7 +13,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun onClickFragmentTransaction(view: View) {
+    fun onClickFragmentTransaction1(view: View) {
         startActivity(Intent(this, FragmentTransactionActivity::class.java))
+    }
+
+    fun onClickFragmentTransaction2(view: View) {
     }
 }
